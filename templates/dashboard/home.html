@@ -1,0 +1,23 @@
+{% extends 'base/layout.html' %}
+
+{% block body %}
+<div class="ui centered grid " style="padding-top: 5rem;">
+    <div class="row">
+        <div class="ui huge header">Morphine Monitoring</div>
+    </div>
+
+    <div class="ui raised very padded segment">
+        <div class="ui row">
+            <span class="ui large text">
+                ยาช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
+            </span>
+        </div>
+        <div class="ui row">
+            <span class="ui large text">
+                ยาช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
+            </span>
+        </div>
+    </div>
+
+</div>
+{% endblock body %}
