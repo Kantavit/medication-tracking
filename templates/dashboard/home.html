@@ -5,19 +5,29 @@
     <div class="row">
         <div class="ui huge header">Morphine Monitoring</div>
     </div>
-
-    <div class="ui raised very padded segment">
-        <div class="ui row">
-            <span class="ui large text">
-                ยาช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
-            </span>
+    
+    <div>
+        <div class="ui raised very padded segment">
+            <div id="space-fifteenth"  class="ui row">
+                <i class="colored black circular big pills icon"></i>
+                <span class="ui large text">
+                    จำนวนยาคงเหลือภายในกล่อง
+                </span>
+            </div>
+            <div id="space-ten" class="ui row">
+                <span class="ui large text">
+                    ช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
+                </span>
+            </div>
+            <div id="space-fifteenth" class="ui columns">
+                <span class="ui large text">
+                    ช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
+                </span>
+            </div>
         </div>
-        <div class="ui row">
-            <span class="ui large text">
-                ยาช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
-            </span>
+        <div class="row">
+            <button class="ui teal fluid button" onClick="window.location.reload();" style="font-size:17px;">Refresh</button>
         </div>
-    </div>
-
+    </div> 
 </div>
 {% endblock body %}
