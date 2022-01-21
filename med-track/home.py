@@ -1,12 +1,12 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
 
 import requests
 
-app = Flask(__name__)
+bp = Blueprint("home", __name__, url_prefix="/")
 
 
-@app.route("/")
-def home():
+@bp.route("/")
+def index():
     req = requests.get(
         "https://api.netpie.io/v2/device/shadow/data",
         auth=(
@@ -22,7 +22,3 @@ def home():
         left_medicine=left_medicine,
         right_medicine=right_medicine,
     )
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)

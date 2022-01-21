@@ -1,5 +1,13 @@
-*.pyc
 env
+
+*.pyc
+__pycache__
+
 .vscode
+
+instance/
+
 node_modules/
 package-lock.json
+
+*.egg-info/
