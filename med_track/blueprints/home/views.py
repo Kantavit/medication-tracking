@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template
+import imp
+from flask import render_template
+from . import bp
 
 import requests
-
-bp = Blueprint("home", __name__, url_prefix="/")
 
 
 @bp.route("/")
@@ -18,7 +18,7 @@ def index():
     left_medicine = req["data"]["left"]
     right_medicine = req["data"]["right"]
     return render_template(
-        "dashboard/home.html",
+        "home/index.html",
         left_medicine=left_medicine,
         right_medicine=right_medicine,
     )

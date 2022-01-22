@@ -1,5 +1,6 @@
 from flask import Flask
-from . import home
+
+from med_track import blueprints  # project package
 
 import os
 
@@ -22,6 +23,6 @@ def create_app(test_config=None):
         pass
 
     # Blueprints
-    app.register_blueprint(home.bp)
+    blueprints.register_blueprints(app)
 
     return app
