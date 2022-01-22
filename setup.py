@@ -1,5 +1,3 @@
-from importlib.metadata import requires
-from pkg_resources import parse_requirements
 from setuptools import find_packages, setup
 
 with open("requirements.txt", "r") as f:
@@ -12,4 +10,5 @@ setup(
     include_package_data=True,  # To include other files, such as the static and templates directories
     zip_safe=False,
     install_requires=install_requires,
+    scripts=["run-web"],
 )
