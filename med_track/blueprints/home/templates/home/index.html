@@ -1,25 +1,33 @@
 {% extends 'base/layout.html' %}
 
+{% block title %}
+Morphine Monitoring
+{% endblock title %}
+
 {% block body %}
 <div class="ui centered grid " style="padding-top: 5rem;">
     <div class="row">
-        <div class="ui huge header">Morphine Monitoring</div>
+        <div class="ui massive header">
+            <span class="ui big text">
+                Morphine Monitoring
+            </span>
+        </div>
     </div>
     
     <div>
         <div class="ui raised very padded segment">
-            <div id="space-fifteenth"  class="ui row">
-                <i class="colored black circular big pills icon"></i>
+            <div class="ui row" style="padding-bottom: 15px;">
                 <span class="ui large text">
-                    จำนวนยาคงเหลือภายในกล่อง
+                    <i class="colored black circular large pills icon"></i>
+                    <b>จำนวนยาคงเหลือภายในกล่อง</b>
                 </span>
             </div>
-            <div id="space-ten" class="ui row">
+            <div class="ui row" style="padding-bottom: 10px;">
                 <span class="ui large text">
                     ช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
                 </span>
             </div>
-            <div id="space-fifteenth" class="ui columns">
+            <div class="ui columns" style="padding-bottom: 15px;">
                 <span class="ui large text">
                     ช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
                 </span>
@@ -29,5 +37,23 @@
             <button class="ui teal fluid button" onClick="window.location.reload();" style="font-size:17px;">Refresh</button>
         </div>
     </div> 
+</div>
+
+
+<div class="ui centered grid " style="padding-top: 5rem;">
+    <div>
+        <div class="ui raised very padded segment">
+            <div class="ui row">
+                <span class="ui large text">
+                    ยินดีต้อนรับคุณ {{ name }}
+                </span>
+            </div>
+        </div>
+        <a href="{{ url_for('account.logout') }}">
+            <button class="ui teal fluid google plus button" style="font-size:17px;">
+                Sign out
+            </button>
+        </a>
+    </div>
 </div>
 {% endblock body %}

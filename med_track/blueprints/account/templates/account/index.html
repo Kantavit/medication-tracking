@@ -1,0 +1,45 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}
+Morphine Monitoring
+{% endblock title %}
+
+{% block body %}
+<div class="ui centered grid " style="padding-top: 5rem;">
+    <div class="row">
+        <div class="ui massive header">
+            <span class="ui big text">
+                Morphine Monitoring
+            </span>
+        </div>
+    </div>
+    
+    <div>
+        <div class="ui raised very padded segment">
+            <div class="ui row" style="padding-bottom: 15px;">
+                <span class="ui big text">
+                    <i class="colored black circular user icon"></i>
+                </span>
+            </div>
+            <div class="ui row" style="padding-bottom: 50px;">
+                <span class="ui big text">
+                    <b>ยินดีต้อนรับ</b>
+                </span>
+            </div>
+            <div class="ui row" style="padding-bottom: 5px;">
+                <a href="{{ url_for('account.login') }}">
+                    <button class="ui google plus button" style="font-size:17px;">
+                        <i class="google icon"></i>
+                        Sign in with Google
+                    </button>
+                </a>
+            </div>
+            <div class="ui row" style="padding-top: 15px;">
+                <span class="ui large text">
+                    โปรดกรุณาลงชื่อเข้าใช้
+                </span>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock body %}

@@ -1,5 +1,4 @@
-import imp
-from flask import render_template
+from flask import render_template, session
 from . import bp
 
 import requests
@@ -17,8 +16,11 @@ def index():
     req = req.json()
     left_medicine = req["data"]["left"]
     right_medicine = req["data"]["right"]
+    name = dict(session)['profile']['name']
+
     return render_template(
         "home/index.html",
         left_medicine=left_medicine,
         right_medicine=right_medicine,
+        name=name
     )
