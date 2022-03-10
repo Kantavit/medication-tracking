@@ -1,59 +1,144 @@
 {% extends 'base/layout.html' %}
 
 {% block title %}
-Morphine Monitoring
+Pill Track 
 {% endblock title %}
-
+<!-- Morphine Monitoring -->
 {% block body %}
 <div class="ui centered grid " style="padding-top: 5rem;">
     <div class="row">
         <div class="ui massive header">
             <span class="ui big text">
-                Morphine Monitoring
+                <i class="book medical icon"></i>
+                Pill Track
             </span>
         </div>
     </div>
     
     <div>
-        <div class="ui raised very padded segment">
-            <div class="ui row" style="padding-bottom: 15px;">
-                <span class="ui large text">
-                    <i class="colored black circular large pills icon"></i>
-                    <b>จำนวนยาคงเหลือภายในกล่อง</b>
-                </span>
+        <div class="ui grid" style="padding-top: 1rem;">
+            <div class="columns">
+                <div class="ui raised very padded segment">
+                    <div class="ui row">
+                        <span class="ui large text">
+                            <div class="ui tiny image"> <img src="{{ picture }}" alt="profile picture"> </div>
+                            ยินดีต้อนรับคุณ {{ name }}
+                        </span>
+                    </div>
+                </div>
+                <a href="{{ url_for('account.logout') }}">
+                    <button class="ui teal fluid google plus button" style="font-size:17px;">
+                        Sign out
+                    </button>
+                </a>
+        
+                <div class="ui raised very padded segment">
+                    <div class="ui row" style="padding-bottom: 15px;">
+                        <span class="ui large text">
+                            <i class="colored black large pills icon"></i>
+                            <b>จำนวนยาคงเหลือภายในกล่อง</b>
+                        </span>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <div class="ui row" style="padding-bottom: 10px;">
+                        <span class="ui large text">
+                            ช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
+                        </span>
+                    </div>
+                    <div class="ui columns" style="padding-bottom: 15px;">
+                        <span class="ui large text">
+                            ช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="ui teal fluid button" onClick="window.location.reload();" style="font-size:17px;">Refresh</button>
+                </div>
             </div>
-            <div class="ui row" style="padding-bottom: 10px;">
-                <span class="ui large text">
-                    ช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
-                </span>
+            
+
+            <div class="columns">
+                <div class="ui raised very padded segment" style="height: 100%; width: 100%;">
+                    <div class="ui row" style="padding-bottom: 15px;">
+                        <span class="ui large text">
+                            <i class="colored black large clipboard outline icon"></i>
+                            <b>ประวัติการใช้ยา</b>
+                        </span>
+                    </div>
+                    <div class="ui divider"></div>
+
+                    <div class="ui row" style="padding-bottom: 15px; ">
+                        <div style="overflow-y: scroll; height: 350px;">
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear1 }}</b>
+                                </div>
+                                <div class="medium text">
+                                    ช่องซ้าย <u>{{ left_medicine_yesterday1 }}</u>/10 เม็ด
+                                </div>
+                                <div class="medium text">
+                                    ช่องขวา <u>{{ right_medicine_yesterday1 }}</u>/10 เม็ด
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear2 }}</b>
+                                </div>
+                                <div class="medium text">
+                                    ช่องซ้าย <u>{{ left_medicine_yesterday2 }}</u>/10 เม็ด
+                                </div>
+                                <div class="medium text">
+                                    ช่องขวา <u>{{ right_medicine_yesterday2 }}</u>/10 เม็ด
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear3 }}</b>
+                                </div>
+                                <div class="medium text">
+                                    ช่องซ้าย <u>{{ left_medicine_yesterday3 }}</u>/10 เม็ด
+                                </div>
+                                <div class="medium text">
+                                    ช่องขวา <u>{{ right_medicine_yesterday3 }}</u>/10 เม็ด
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear4 }}</b>
+                                </div>
+                                <div class="medium text">
+                                    ช่องซ้าย <u>{{ left_medicine_yesterday4 }}</u>/10 เม็ด
+                                </div>
+                                <div class="medium text">
+                                    ช่องขวา <u>{{ right_medicine_yesterday4 }}</u>/10 เม็ด
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear5 }}</b>
+                                </div>
+                                <div class="medium text">
+                                    ช่องซ้าย <u>{{ left_medicine_yesterday5 }}</u>/10 เม็ด
+                                </div>
+                                <div class="medium text">
+                                    ช่องขวา <u>{{ right_medicine_yesterday5 }}</u>/10 เม็ด
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ui columns" style="padding-bottom: 15px;">
-                <span class="ui large text">
-                    ช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <button class="ui teal fluid button" onClick="window.location.reload();" style="font-size:17px;">Refresh</button>
         </div>
     </div> 
 </div>
 
-
-<div class="ui centered grid " style="padding-top: 5rem;">
-    <div>
-        <div class="ui raised very padded segment">
-            <div class="ui row">
-                <span class="ui large text">
-                    ยินดีต้อนรับคุณ {{ name }}
-                </span>
-            </div>
-        </div>
-        <a href="{{ url_for('account.logout') }}">
-            <button class="ui teal fluid google plus button" style="font-size:17px;">
-                Sign out
-            </button>
-        </a>
-    </div>
-</div>
 {% endblock body %}

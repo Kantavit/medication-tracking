@@ -9,7 +9,7 @@ import requests
 
 
 @bp.route('/')
-def hello_world():
+def home():
     if(session):
         return redirect('/home')
     return render_template("account/index.html")

@@ -1,8 +1,6 @@
 from flask import Flask
-
 from med_track import blueprints  # project package
-
-from authlib.integrations.flask_client import OAuth
+from authlib.integrations.flask_client import OAuth # OAuth
 from datetime import timedelta
 import os
 
