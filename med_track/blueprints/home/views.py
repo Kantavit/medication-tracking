@@ -71,8 +71,12 @@ def index():
         })
     #aggregator first last avg sum
     res = res.json()
-    left_medicine_yesterday1 = res["queries"][0]['results'][0]['values'][-1][1]
-    right_medicine_yesterday1 = res["queries"][0]['results'][1]['values'][-1][1]
+    try:
+        left_medicine_yesterday1 = res["queries"][0]['results'][0]['values'][-1][1]
+        right_medicine_yesterday1 = res["queries"][0]['results'][1]['values'][-1][1]
+    except IndexError:
+        left_medicine_yesterday1 = 0
+        right_medicine_yesterday1 = 0
     dayMonthYear1 = datetime.utcfromtimestamp(unixtime_start/1000 + 25200).strftime('วันที่ %d/%m/%Y') # GMT+7 %H:%M:%S
 
     # -----------------------------------------------------------------------------------------------------------------
@@ -120,8 +124,12 @@ def index():
         })
     #aggregator first last avg sum
     res = res.json()
-    left_medicine_yesterday2 = res["queries"][0]['results'][0]['values'][-1][1]
-    right_medicine_yesterday2 = res["queries"][0]['results'][1]['values'][-1][1]
+    try:
+        left_medicine_yesterday2 = res["queries"][0]['results'][0]['values'][-1][1]
+        right_medicine_yesterday2 = res["queries"][0]['results'][1]['values'][-1][1]
+    except IndexError:
+        left_medicine_yesterday2 = 0
+        right_medicine_yesterday2 = 0
     dayMonthYear2 = datetime.utcfromtimestamp(unixtime_start/1000 + 25200).strftime('วันที่ %d/%m/%Y') # GMT+7 %H:%M:%S
 
     # -----------------------------------------------------------------------------------------------------------------
@@ -169,8 +177,12 @@ def index():
         })
     #aggregator first last avg sum
     res = res.json()
-    left_medicine_yesterday3 = res["queries"][0]['results'][0]['values'][-1][1]
-    right_medicine_yesterday3 = res["queries"][0]['results'][1]['values'][-1][1]
+    try:
+        left_medicine_yesterday3 = res["queries"][0]['results'][0]['values'][-1][1]
+        right_medicine_yesterday3 = res["queries"][0]['results'][1]['values'][-1][1]
+    except IndexError:
+        left_medicine_yesterday3 = 0
+        right_medicine_yesterday3 = 0
     dayMonthYear3 = datetime.utcfromtimestamp(unixtime_start/1000 + 25200).strftime('วันที่ %d/%m/%Y') # GMT+7 %H:%M:%S
 
     # -----------------------------------------------------------------------------------------------------------------
@@ -218,8 +230,12 @@ def index():
         })
     #aggregator first last avg sum
     res = res.json()
-    left_medicine_yesterday4 = res["queries"][0]['results'][0]['values'][-1][1]
-    right_medicine_yesterday4 = res["queries"][0]['results'][1]['values'][-1][1]
+    try:
+        left_medicine_yesterday4 = res["queries"][0]['results'][0]['values'][-1][1]
+        right_medicine_yesterday4 = res["queries"][0]['results'][1]['values'][-1][1]
+    except IndexError:
+        left_medicine_yesterday4 = 0
+        right_medicine_yesterday4 = 0
     dayMonthYear4 = datetime.utcfromtimestamp(unixtime_start/1000 + 25200).strftime('วันที่ %d/%m/%Y') # GMT+7 %H:%M:%S
 
     # -----------------------------------------------------------------------------------------------------------------
@@ -267,8 +283,12 @@ def index():
         })
     #aggregator first last avg sum
     res = res.json()
-    left_medicine_yesterday5 = res["queries"][0]['results'][0]['values'][-1][1]
-    right_medicine_yesterday5 = res["queries"][0]['results'][1]['values'][-1][1]
+    try:
+        left_medicine_yesterday5 = res["queries"][0]['results'][0]['values'][-1][1]
+        right_medicine_yesterday5 = res["queries"][0]['results'][1]['values'][-1][1]
+    except IndexError:
+        left_medicine_yesterday5 = 0
+        right_medicine_yesterday5 = 0
     dayMonthYear5 = datetime.utcfromtimestamp(unixtime_start/1000 + 25200).strftime('วันที่ %d/%m/%Y') # GMT+7 %H:%M:%S
 
 
