@@ -36,30 +36,81 @@ Morphine Monitoring
                     <div class="ui row" style="padding-bottom: 15px;">
                         <span class="ui large text">
                             <i class="colored black large pills icon"></i>
-                            <b>จำนวนยาคงเหลือภายในกล่อง</b>
+                            <b>จำนวนยาคงเหลือภายในกล่องวันนี้</b>
                         </span>
                     </div>
                     <div class="ui divider"></div>
-
-                    <div class="ui row" style="padding-bottom: 10px;">
-                        <span class="ui large text">
-                            ช่องซ้าย <u>{{ left_medicine }}</u>/10 เม็ด
-                        </span>
+                    <div class="row">
+                        <div class="medium text">
+                            <span class="ui large text">
+                                <b>{{ dayMonthYear }}</b>
+                            </span>
+                        </div>
+                        <div class="ui divider"></div>
                     </div>
-                    <div class="ui columns" style="padding-bottom: 15px;">
-                        <span class="ui large text">
-                            ช่องขวา <u>{{ right_medicine }}</u>/10 เม็ด
-                        </span>
+                    <div class="ui four column divided grid">
+                        <div class="row">
+                            <div class="column">
+                                <div><b>เวลาเช้า</b></div>
+                                <div>{{ recentTime_morning }}</div>
+                                <div class="ui segment">
+                                    <div class="medium text">
+                                        ช่องซ้าย <u>{{ left_morning }}</u>/10 เม็ด
+                                    </div>
+                                    <div class="medium text">
+                                        ช่องขวา <u>{{ right_morning }}</u>/10 เม็ด
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="column">
+                                <div><b>เวลากลางวัน</b></div>
+                                <div>{{ recentTime_noon }}</div>
+                                <div class="ui segment">
+                                    <div class="medium text">
+                                        ช่องซ้าย <u>{{ left_noon }}</u>/10 เม็ด
+                                    </div>
+                                    <div class="medium text">
+                                        ช่องขวา <u>{{ right_noon }}</u>/10 เม็ด
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="column">
+                                <div><b>เวลาเย็น</b></div>
+                                <div>{{ recentTime_evening }}</div>
+                                <div class="ui segment">
+                                    <div class="medium text">
+                                        ช่องซ้าย <u>{{ left_evening }}</u>/10 เม็ด
+                                    </div>
+                                    <div class="medium text">
+                                        ช่องขวา <u>{{ right_evening }}</u>/10 เม็ด
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="column">
+                                <div><b>เวลาก่อนนอน</b></div>
+                                <div>{{ recentTime_bedtime }}</div>
+                                <div class="ui segment">
+                                    <div class="medium text">
+                                        ช่องซ้าย <u>{{ left_bedtime }}</u>/10 เม็ด
+                                    </div>
+                                    <div class="medium text">
+                                        ช่องขวา <u>{{ right_bedtime }}</u>/10 เม็ด
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <button class="ui teal fluid button" onClick="window.location.reload();" style="font-size:17px;">Refresh</button>
                 </div>
-            </div>
-            
 
-            <div class="columns">
-                <div class="ui raised very padded segment" style="height: 100%; width: 100%;">
+                <!-- replace -->
+                <div class="ui raised very padded segment" style="height: 45%; width: 100%;">
                     <div class="ui row" style="padding-bottom: 15px;">
                         <span class="ui large text">
                             <i class="colored black large clipboard outline icon"></i>
@@ -68,75 +119,376 @@ Morphine Monitoring
                     </div>
                     <div class="ui divider"></div>
 
-                    <div class="ui row" style="padding-bottom: 15px; ">
-                        <div style="overflow-y: scroll; height: 350px;">
+                    <div class="ui row" style="padding-bottom: 100px; ">
+                        <div style="overflow-y: scroll; height: 400px;">
                             <div class="row">
                                 <div class="medium text">
                                     <b>{{ dayMonthYear1 }}</b>
                                 </div>
-                                <div class="medium text">
-                                    ช่องซ้าย <u>{{ left_medicine_yesterday1 }}</u>/10 เม็ด
-                                </div>
-                                <div class="medium text">
-                                    ช่องขวา <u>{{ right_medicine_yesterday1 }}</u>/10 เม็ด
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday1 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday1 }}</u>/10 เม็ด
+                                        </div>    
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday1 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday1 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday1 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday1 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="ui divider"></div>
-
                             <div class="row">
                                 <div class="medium text">
                                     <b>{{ dayMonthYear2 }}</b>
                                 </div>
-                                <div class="medium text">
-                                    ช่องซ้าย <u>{{ left_medicine_yesterday2 }}</u>/10 เม็ด
-                                </div>
-                                <div class="medium text">
-                                    ช่องขวา <u>{{ right_medicine_yesterday2 }}</u>/10 เม็ด
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday2 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday2 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday2 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday2 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday2 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="ui divider"></div>
-
                             <div class="row">
                                 <div class="medium text">
                                     <b>{{ dayMonthYear3 }}</b>
                                 </div>
-                                <div class="medium text">
-                                    ช่องซ้าย <u>{{ left_medicine_yesterday3 }}</u>/10 เม็ด
-                                </div>
-                                <div class="medium text">
-                                    ช่องขวา <u>{{ right_medicine_yesterday3 }}</u>/10 เม็ด
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday3 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday3 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday3 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday3 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday3 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="ui divider"></div>
-
                             <div class="row">
                                 <div class="medium text">
                                     <b>{{ dayMonthYear4 }}</b>
                                 </div>
-                                <div class="medium text">
-                                    ช่องซ้าย <u>{{ left_medicine_yesterday4 }}</u>/10 เม็ด
-                                </div>
-                                <div class="medium text">
-                                    ช่องขวา <u>{{ right_medicine_yesterday4 }}</u>/10 เม็ด
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday4 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday4 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday4 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday4 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday4 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="ui divider"></div>
-
                             <div class="row">
                                 <div class="medium text">
                                     <b>{{ dayMonthYear5 }}</b>
                                 </div>
-                                <div class="medium text">
-                                    ช่องซ้าย <u>{{ left_medicine_yesterday5 }}</u>/10 เม็ด
-                                </div>
-                                <div class="medium text">
-                                    ช่องขวา <u>{{ right_medicine_yesterday5 }}</u>/10 เม็ด
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday5 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday5 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday5 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday5 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday5 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="ui divider"></div>
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear6 }}</b>
+                                </div>
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday6 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday6 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday6 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday6 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday6 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <div class="row">
+                                <div class="medium text">
+                                    <b>{{ dayMonthYear7 }}</b>
+                                </div>
+                                <div class="ui divider"></div>
+                            </div>
+                            <div class="ui four column divided grid">
+                                <div class="row">
+                                    <div class="column">
+                                        <div><b>เวลาเช้า</b></div>
+                                        <div>{{ recentTime_morning_yesterday7 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_morning_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_morning_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลากลางวัน</b></div>
+                                        <div>{{ recentTime_noon_yesterday7 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_noon_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_noon_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาเย็น</b></div>
+                                        <div>{{ recentTime_evening_yesterday7 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_evening_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_evening_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <div><b>เวลาก่อนนอน</b></div>
+                                        <div>{{ recentTime_bedtime_yesterday7 }}</div>
+                                        <div class="medium text">
+                                            ช่องซ้าย <u>{{ left_bedtime_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                        <div class="medium text">
+                                            ช่องขวา <u>{{ right_bedtime_yesterday7 }}</u>/10 เม็ด
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+
                         </div>
                     </div>
                 </div>
+                <!-- here -->
             </div>
+            
+
+            <!-- <div class="columns">
+                
+            </div> -->
         </div>
     </div> 
 </div>
