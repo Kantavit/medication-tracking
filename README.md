@@ -25,7 +25,7 @@ py -3 -m venv env
 Activate the environment
 
 ```
-. ./env/bin/activate
+env\Scripts\activate
 ```
 
 Install NPM packages
@@ -71,7 +71,7 @@ python3 -m venv env
 Activate the environment
 
 ```
-env/bin/activate
+. ./env/bin/activate
 ```
 
 Install NPM packages
