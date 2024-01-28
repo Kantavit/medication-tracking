@@ -16,7 +16,7 @@ git clone https://github.com/Kantavit/medication-tracking.git
 cd medication-tracking
 ```
 
-Create an enviroments
+Create an environment
 
 ```
 py -3 -m venv env
@@ -25,7 +25,7 @@ py -3 -m venv env
 Activate the environment
 
 ```
-env\Scripts\activate
+. ./env/bin/activate
 ```
 
 Install NPM packages
@@ -62,7 +62,7 @@ git clone https://github.com/Kantavit/medication-tracking.git
 cd medication-tracking
 ```
 
-Create an enviroments
+Create an environment
 
 ```
 python3 -m venv env
