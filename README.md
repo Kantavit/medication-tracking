@@ -4,8 +4,10 @@ Follow the patient taking medicine is an important problem because a doctor canâ
 
 ## Windows10 Installation
 
-Python3: [Link](https://www.python.org/downloads/)
-NodeJS: [Link](https://nodejs.org/en/download/)
+> [!IMPORTANT]
+> You need to install these things first.
+> Python3: [Link](https://www.python.org/downloads/)
+> NodeJS: [Link](https://nodejs.org/en/download/)
 
 Clone repository and cd into folder
 
@@ -24,6 +26,52 @@ Activate the environment
 
 ```
 env\Scripts\activate
+```
+
+Install NPM packages
+
+```
+cd med_track/static
+npm install
+cd ../..
+```
+
+Install pip packages
+
+```
+pip install -r requirements.txt
+```
+
+Run Web Application
+
+```
+run-web-win10.bat
+```
+
+## Linux Installation
+
+> [!IMPORTANT]
+> You need to install these things first.
+> Python3: [Link](https://docs.python-guide.org/starting/install3/linux/)
+> NodeJS: [Link](https://github.com/nodesource/distributions)
+
+Clone repository and cd into folder
+
+```
+git clone https://github.com/Kantavit/medication-tracking.git
+cd medication-tracking
+```
+
+Create an enviroments
+
+```
+python3 -m venv env
+```
+
+Activate the environment
+
+```
+env/bin/activate
 ```
 
 Install NPM packages
