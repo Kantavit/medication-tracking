@@ -91,5 +91,5 @@ pip install -r requirements.txt
 Run Web Application
 
 ```
-run-web-win10.bat
+run-web
 ```
