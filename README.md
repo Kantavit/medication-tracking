@@ -52,7 +52,7 @@ run-web-win10.bat
 
 > [!IMPORTANT]
 > You need to install these things first.
-> Python3 (3.9.11 only!): [Link](https://docs.python-guide.org/starting/install3/linux/)
+> Python3 (3.9.* only!): [Link](https://docs.python-guide.org/starting/install3/linux/)
 > NodeJS: [Link](https://github.com/nodesource/distributions)
 
 Clone repository and cd into folder
