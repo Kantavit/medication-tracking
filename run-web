@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-[ -d "./env" ] && . ./env/bin/activate
+[ -d "./venv" ] && . ./venv/bin/activate
 export FLASK_ENV=development
 export FLASK_APP=med_track
 flask run -h 127.0.0.1 -p 5000

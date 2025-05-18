@@ -1,4 +1,3 @@
-from turtle import left
 from flask import render_template, session, redirect, url_for
 from . import bp
 
